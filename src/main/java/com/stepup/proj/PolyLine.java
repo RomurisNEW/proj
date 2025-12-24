@@ -1,8 +1,5 @@
 package com.stepup.proj;
-
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class PolyLine {
     Point[] points;
