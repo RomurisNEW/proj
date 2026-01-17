@@ -1,6 +1,6 @@
 package com.stepup.proj;
 
-public class Fraction {
+public class Fraction extends Number{
     private final int numerator;
     private final int denominator;
 
@@ -11,32 +11,28 @@ public class Fraction {
         this.numerator = numerator;
         this.denominator = denominator;
     }
-
-    public Fraction sum(Fraction znach) {
-        int newNumerator = this.numerator * znach.denominator + this.denominator * znach.numerator;
-        int newDenominator = this.denominator * znach.denominator;
-        return new Fraction(newNumerator, newDenominator);
-    }
-
-    public Fraction minus(Fraction znach) {
-        int newNumerator = this.numerator * znach.denominator - this.denominator * znach.numerator;
-        int newDenominator = this.denominator * znach.denominator;
-        return new Fraction(newNumerator, newDenominator);
-    }
-
-    public Fraction minus(int num) {
-        int newNumerator = this.numerator - num * this.denominator;
-        return new Fraction(newNumerator, this.denominator);
-    }
-
-    public Fraction sum(int num) {
-        int newNumerator = this.numerator + num * this.denominator;
-        return new Fraction(newNumerator, this.denominator);
-    }
-
     @Override
     public String toString() {
         return numerator +
                 "/" + denominator;
+    }
+    @Override
+    public int intValue() {
+        return (int) doubleValue();
+    }
+
+    @Override
+    public long longValue() {
+        return (long) doubleValue();
+    }
+
+    @Override
+    public float floatValue() {
+        return (float) doubleValue();
+    }
+
+    @Override
+    public double doubleValue() {
+        return (double) numerator/denominator;
     }
 }
