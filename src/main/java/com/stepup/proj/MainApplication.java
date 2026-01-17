@@ -2,20 +2,17 @@ package com.stepup.proj;
 
 public class MainApplication {
     public static void main(String[] args) {
-        Fraction num1 = new Fraction(3,4);
 
-        System.out.println("Дробь double: " + num1 + "=" + num1.doubleValue());
-        System.out.println("Дробь float: " + num1 + "=" + num1.floatValue());
-        System.out.println("Дробь int: " + num1 + "=" + num1.intValue());
-        System.out.println("Дробь long: " + num1 + "=" + num1.longValue());
+        System.out.println(sumAll(2, new Fraction(3,5), 2.3));
+        System.out.println(sumAll(3.6, new Fraction(49,12), 3, new Fraction(3, 2)));
+        System.out.println(String.format("%.3f",sumAll(new Fraction(1,3), 1)));
+    }
 
-        System.out.println("");
-
-        Fraction num2 = new Fraction(25,2);
-
-        System.out.println("Дробь double: " + num2 + "=" + num2.doubleValue());
-        System.out.println("Дробь float: " + num2 + "=" + num2.floatValue());
-        System.out.println("Дробь int: " + num2 + "=" + num2.intValue());
-        System.out.println("Дробь long: " + num2 + "=" + num2.longValue());
+    public static double sumAll(Number... numbers){
+        double sum = 0;
+        for (Number number : numbers){
+            sum += number.doubleValue();
+        }
+        return sum;
     }
 }
