@@ -46,7 +46,7 @@ class Square implements Shapesable {
 
     @Override
     public String toString() {
-        return "Квадрат в точке {" + x + ";" + y + "} со стороной" + sideSquare + ". Площадь квадрата = "
+        return "Квадрат в точке {" + x + ";" + y + "} со стороной " + sideSquare + ". Площадь квадрата = "
                 + getArea();
     }
 }
@@ -73,7 +73,7 @@ class Rectangle implements Shapesable {
 
     @Override
     public String toString() {
-        return "Прямоугольник в точке {" + x + ";" + y + "} со сторонами" + dlinX + " и "
+        return "Прямоугольник в точке {" + x + ";" + y + "} со сторонами " + dlinX + " и "
                 + dlinY + ". Площадь прямоугольника = "
                 + getArea();
     }
