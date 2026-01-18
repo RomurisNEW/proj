@@ -3,39 +3,37 @@ package com.stepup.proj;
 import java.util.Random;
 
 public abstract class Bird implements Singable {
-    public void sing() {
-        System.out.println("Птица издает пение");
-    }
 }
 
-class Sparrow extends Bird{
-    public void sing(){
+class Sparrow extends Bird {
+    public void sing() {
         System.out.println("чырык");
     }
 }
 
-class Сuckoo extends Bird{
-    public void sing(){
-        Random random = new Random();
+class Cuckoo extends Bird {
+    private final Random random = new Random();
+
+    public void sing() {
         int count = random.nextInt(10) + 1;
 
-        for(int i = 0; i < count; i++){
+        for (int i = 0; i < count; i++) {
             System.out.print("ку-ку ");
         }
         System.out.println("");
     }
 }
 
-class Parrot extends Bird{
+class Parrot extends Bird {
     private final String songText;
+    private final Random random = new Random();
 
     public Parrot(String songText) {
         this.songText = songText;
     }
 
-    public void sing(){
-        Random random = new Random();
+    public void sing() {
         int count = random.nextInt(songText.length()) + 1;
-        System.out.println(songText.substring(0,count));
+        System.out.println(songText.substring(0, count));
     }
 }
