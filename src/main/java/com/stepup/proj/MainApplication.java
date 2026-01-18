@@ -2,10 +2,18 @@ package com.stepup.proj;
 
 public class MainApplication {
     public static void main(String[] args) {
-        Point p2D = new Point(3, 9);
-        System.out.println(p2D);
+        Shapesable[] figuras = {
+                new Circle(24, 12, 2),
+                new Square(11, 24, 2),
+                new Rectangle(12, 11, 3, 2)
+        };
 
-        Point3D p3D = new Point3D(1,2,4);
-        System.out.println(p3D);
+        for (Shapesable figura : figuras) {
+            System.out.println(figura);
+        }
     }
+}
+
+interface Shapesable {
+    double getArea();
 }
