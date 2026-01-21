@@ -1,6 +1,6 @@
 package ru.courses.birds;
 
-import com.stepup.proj.Singable;
+import ru.courses.main.Singable;
 
 public abstract class Bird implements Singable {
     public void sing() {

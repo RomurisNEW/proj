@@ -1,8 +1,6 @@
-package com.stepup.proj;
+package ru.courses.main;
 
-import ru.courses.birds.Parrot;
-import ru.courses.birds.Sparrow;
-import ru.courses.birds.Cuckoo;
+import ru.courses.birds.*;
 
 public class MainApplication {
     public static void main(String[] args) {

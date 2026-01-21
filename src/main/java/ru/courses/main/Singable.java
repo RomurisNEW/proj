@@ -1,4 +1,4 @@
-package com.stepup.proj;
+package ru.courses.main;
 
 public interface Singable {
     void sing();
