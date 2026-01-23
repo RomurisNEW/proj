@@ -1,4 +1,6 @@
-package com.stepup.proj;
+package ru.courses.geometry;
+
+import ru.courses.start.Pointable;
 
 public class Point implements Pointable {
     private final int[] point;

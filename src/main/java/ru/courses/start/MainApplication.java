@@ -1,4 +1,8 @@
-package com.stepup.proj;
+package ru.courses.start;
+
+import ru.courses.geometry.Point;
+import com.stepup.proj.PointColor;
+import com.stepup.proj.PointTime;
 
 public class MainApplication {
     public static void main(String[] args) {
@@ -14,5 +18,5 @@ public class MainApplication {
     }
 }
 
-interface Pointable {
+public interface Pointable {
 }
