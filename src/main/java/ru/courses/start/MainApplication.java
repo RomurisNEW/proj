@@ -2,20 +2,16 @@ package ru.courses.start;
 
 import ru.courses.geometry.*;
 
-public class MainApplication {
+public class MainApplication extends Exception {
     public static void main(String[] args) throws CloneNotSupportedException {
-        Point p1 = new Point(1,2);
-        Point p2 = new Point(1,2);
-        System.out.println(p1 == p2);
-        System.out.println(p1.equals(p2));
+        Line l1 = new Line(new Point(1,2), new Point(2,4));
+        System.out.println("Линия 1: " + l1);
 
-        System.out.println("------------------------------");
+        Line l2 = l1.clone();
+        System.out.println("Линия 2: " + l2);
 
-        Point p3 = p1.clone();
-        System.out.println(p3);
-        System.out.println(p2 == p3);
-        System.out.println(p2.equals(p3));
-
+        System.out.println(l1==l2);
+        System.out.println(l1.equals(l2));
 
     }
 }
