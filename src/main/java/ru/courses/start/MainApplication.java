@@ -1,32 +1,74 @@
 package ru.courses.start;
 
-import ru.courses.geometry.*;
+public class MainApplication{
+    public static void main(String[] args) {
+        Sauce sc1 = new Sauce(TypeSauce.KETCHUP);
+        System.out.println(sc1);
+        Sauce sc2 = new Sauce(ETypeSauce.CHILE);
+        System.out.println(sc2);
+    }
+}
 
-public class MainApplication extends Exception {
-    public static void main(String[] args){
-        PolyLine poly1 = new PolyLine(
-                new Point(1, 2),
-                new Point(3, 5),
-                new Point(6, 8),
-                new Point(10, 12)
-        );
+interface Sauceable {
+    String getNameSauce();
+    String getLvlSpice();
+}
 
-        PolyLine poly2 = new PolyLine(
-                new Point(1, 2),
-                new Point(3, 5),
-                new Point(6, 8),
-                new Point(10, 12)
-        );
+class Sauce {
+    private final Sauceable type;
 
-        System.out.println(poly1 + " и " + poly2);
-        System.out.println(poly1 == poly2);
-        System.out.println(poly1.equals(poly2));
+    public Sauce(Sauceable type) {
+        this.type = type;
+    }
 
-        double dlinaPoly1 = poly1.length();
-        double dlinaPoly2 = poly2.length();
-        System.out.println("Длина первой ломанной: " + String.format("%.3f", dlinaPoly1) + ". Длина второй" +
-                " ломанной: " + String.format("%.3f", dlinaPoly2));
-        System.out.println(dlinaPoly1 == dlinaPoly2);
+    @Override
+    public String toString() {
+        return "Соус " + type.getNameSauce() + ":" + type.getLvlSpice();
+    }
+}
+
+enum ETypeSauce implements Sauceable {
+    KETCHUP("Кетчуп", "Не острый"),
+    CHILE("Сладки чили", "С легкой остротой"),
+    ADJIKA("Аджика", "Сильно острый");
+
+    private final String nameSauce;
+    private final String lvlSpice;
+
+    ETypeSauce(String nameSauce, String lvlSpice) {
+        this.nameSauce = nameSauce;
+        this.lvlSpice = lvlSpice;
+    }
+
+    public String getNameSauce() {
+        return nameSauce;
+    }
+
+    public String getLvlSpice() {
+        return lvlSpice;
+    }
+}
+
+class TypeSauce implements Sauceable {
+    private final String nameSauce;
+    private final String lvlSpice;
+    public final static TypeSauce KETCHUP = new TypeSauce("Кетчуп", "Не острый");
+    public final static TypeSauce CHILE = new TypeSauce("Сладки чили", "С легкой остротой");
+    public final static TypeSauce ADJIKA = new TypeSauce("Аджика", "Сильно острый");
+
+    public TypeSauce(String nameSauce, String lvlSpice) {
+        this.nameSauce = nameSauce;
+        this.lvlSpice = lvlSpice;
+    }
+
+    @Override
+    public String getNameSauce() {
+        return nameSauce;
+    }
+
+    @Override
+    public String getLvlSpice() {
+        return lvlSpice;
     }
 }
 
